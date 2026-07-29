@@ -1,0 +1,8 @@
+﻿<Solution>
+  <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="SerenityShift.csproj" />
+  <Project Path="SerenityShift.EditModeTests.csproj" />
+  <Project Path="ALP8310_ControllerGlobal.csproj" />
+  <Project Path="ALP8310_ControllerGlobal.Editor.csproj" />
+</Solution>

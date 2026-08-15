@@ -8,7 +8,8 @@ using TMPro;
 /// reports its note here via <see cref="NotePressed"/>. A wrong note (relative to
 /// <see cref="correctSequence"/>) resets progress and shows a mistake message; completing
 /// the full sequence stops the level timer, shows a success message, and after a delay
-/// resumes Django's ambient music and hides the puzzle's UI.
+/// resumes Django's ambient music and hides the puzzle's UI. Once that cleanup is done,
+/// the "completed mission" prompt fades in, holds, then fades back out.
 /// </summary>
 public class SequenceChecker : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class SequenceChecker : MonoBehaviour
     [SerializeField] private AudioSource djangoMusicSource;
     [SerializeField] private GameObject cubeNotes;
     [SerializeField] private GameObject instructionPanel;
+
+    [Header("Completed Mission Prompt")]
+    [SerializeField] private CompletedMissionPrompt completedMissionPrompt;
 
     private List<string> playerSequence = new List<string>();
     private bool puzzleSolved = false;
@@ -137,6 +141,13 @@ public class SequenceChecker : MonoBehaviour
         {
             instructionPanel.SetActive(false);
             Debug.Log("Instruction panel hidden");
+        }
+
+        // Lives on the prompt object itself, so it keeps running even though
+        // SequenceManager (this script's GameObject) gets deactivated around here.
+        if (completedMissionPrompt != null)
+        {
+            completedMissionPrompt.Show();
         }
     }
 

@@ -5,7 +5,9 @@ using TMPro;
 /// <summary>
 /// Shared "N more to go" style progress message controller used by hybrid levels that
 /// track both NPC and bird catches (unlike <see cref="BirdMessageController"/>, which
-/// only handles birds). Each catch type keeps its own count and message text.
+/// only handles birds). Each catch type keeps its own count and message text. Once the
+/// final catch is made and the progress toast hides, the "completed mission" prompt
+/// fades in, stays for a few seconds, then fades back out.
 /// </summary>
 public class GoalMessageController : MonoBehaviour
 {
@@ -14,6 +16,11 @@ public class GoalMessageController : MonoBehaviour
     public GameObject goalMessage;
     public TextMeshProUGUI goalText;
     public float displayDuration = 3f;
+
+    [Header("Completed Mission Prompt")]
+    public CanvasGroup completedMissionPrompt;
+    public float promptDisplayDuration = 5f;
+    public float promptFadeDuration = 1f;
 
     private int redShirtsCaught = 0;
     private int birdsCaught = 0;
@@ -36,6 +43,12 @@ public class GoalMessageController : MonoBehaviour
         {
             goalMessage.SetActive(false);
         }
+
+        if (completedMissionPrompt != null)
+        {
+            completedMissionPrompt.alpha = 0f;
+            completedMissionPrompt.gameObject.SetActive(false);
+        }
     }
 
     /// <summary>Called each time an NPC is caught.</summary>
@@ -54,6 +67,8 @@ public class GoalMessageController : MonoBehaviour
 
     void ShowNPCMessage()
     {
+        bool missionComplete = false;
+
         if (goalText != null)
         {
             if (redShirtsCaught == 1)
@@ -70,18 +85,21 @@ public class GoalMessageController : MonoBehaviour
                 if (timer != null) timer.StopTimer();
                 string timeString = timer != null ? timer.GetFormattedTime() : "";
                 goalText.text = "Excellent, you caught all of them!\n" + timeString;
+                missionComplete = true;
             }
         }
 
         if (goalMessage != null)
         {
             StopAllCoroutines();
-            StartCoroutine(ShowMessageForDuration());
+            StartCoroutine(ShowMessageForDuration(missionComplete));
         }
     }
 
     void ShowBirdMessage()
     {
+        bool missionComplete = false;
+
         if (goalText != null)
         {
             if (birdsCaught == 1)
@@ -98,20 +116,53 @@ public class GoalMessageController : MonoBehaviour
                 if (timer != null) timer.StopTimer();
                 string timeString = timer != null ? timer.GetFormattedTime() : "";
                 goalText.text = "Excellent! You caught all the birds!\n" + timeString;
+                missionComplete = true;
             }
         }
 
         if (goalMessage != null)
         {
             StopAllCoroutines();
-            StartCoroutine(ShowMessageForDuration());
+            StartCoroutine(ShowMessageForDuration(missionComplete));
         }
     }
 
-    IEnumerator ShowMessageForDuration()
+    IEnumerator ShowMessageForDuration(bool missionComplete)
     {
         goalMessage.SetActive(true);
         yield return new WaitForSeconds(displayDuration);
         goalMessage.SetActive(false);
+
+        if (missionComplete && completedMissionPrompt != null)
+        {
+            yield return StartCoroutine(ShowCompletedMissionPrompt());
+        }
+    }
+
+    IEnumerator ShowCompletedMissionPrompt()
+    {
+        completedMissionPrompt.gameObject.SetActive(true);
+        completedMissionPrompt.alpha = 1f;
+
+        yield return new WaitForSeconds(promptDisplayDuration);
+
+        yield return StartCoroutine(FadeCanvasGroup(completedMissionPrompt, 1f, 0f, promptFadeDuration));
+
+        completedMissionPrompt.gameObject.SetActive(false);
+    }
+
+    IEnumerator FadeCanvasGroup(CanvasGroup cg, float from, float to, float duration)
+    {
+        float elapsed = 0f;
+        cg.alpha = from;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            cg.alpha = Mathf.Lerp(from, to, elapsed / duration);
+            yield return null;
+        }
+
+        cg.alpha = to;
     }
 }

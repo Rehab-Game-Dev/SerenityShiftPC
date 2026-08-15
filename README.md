@@ -2,7 +2,7 @@
 A therapeutic PC simulation for treating anxiety, using controlled daily-life environments to guide users through tasks grounded in clinical practice.
 
 **Built with:** Unity (C#)  
-**Platforms:** PC (VR version lives in a [separate repository](https://github.com/Rehab-Game-Dev/SerenityShiftVR/blob/main))  
+**Platforms:** PC
 **Status:** Prototype
 
 **Team Devs:**
@@ -23,7 +23,7 @@ https://github.com/Rehab-Game-Dev/SerenityShiftVR/wiki
 https://youtu.be/bzBSL8CwUaQ
 
 **Web Demo (itch.io):**  
-https://yarinkash1.itch.io/serenity-shift-vr-sem2-beta-demo
+https://yarinkash1.itch.io/serenity-shift-pc-final-build
 
 ## Licenses & Attribution
 

@@ -2586,17 +2586,6 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
---- !u!114 &19017491 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1407291950378121157, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
-  m_PrefabInstance: {fileID: 1681441676}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681441678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Toggle
 --- !u!114 &19564973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9912,11 +9901,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d42dfe739c231d141892d25395a38bd6, type: 3}
---- !u!1 &89683131 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2490445168223352566, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
-  m_PrefabInstance: {fileID: 1681441676}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &89785139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55161,8 +55145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e4e6cca11330d4088d729ab4fc9d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.XRInteractionManager
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
 --- !u!4 &419206989
 Transform:
   m_ObjectHideFlags: 0
@@ -55190,8 +55172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017c5e3933235514c9520e1dace2a4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Inputs.InputActionManager
-  m_ActionAssets:
-  - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1001 &419779150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108257,6 +108237,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0b0247cdfc0ab4fa0f2167ef685382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuLoader
+  loadingPanel: {fileID: 0}
+  progressBar: {fileID: 0}
+  progressText: {fileID: 0}
+  progressFillSpeed: 0.6
+  menuElementsToHide: []
 --- !u!4 &857033555
 Transform:
   m_ObjectHideFlags: 0
@@ -145133,17 +145118,6 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
---- !u!114 &1149835734 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5173160490206001025, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
-  m_PrefabInstance: {fileID: 1681441676}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1596834881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Toggle
 --- !u!1001 &1150732024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -219889,17 +219863,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 12.954866, y: 26.482182, z: 12.954895}
   m_Center: {x: -5.9774313, y: 12.741091, z: -5.9774604}
---- !u!114 &1698723942 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 898627941957185085, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
-  m_PrefabInstance: {fileID: 1681441676}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984731982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Toggle
 --- !u!114 &1698723944
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -229363,9 +229363,9 @@ MonoBehaviour:
   caughtCount: 0
   totalNPCs: 3
   counterText: {fileID: 1654183907}
-  panel1_Men: {fileID: 0}
-  panel2_Men: {fileID: 0}
-  npcIcon: {fileID: 0}
+  panel1_Men: {fileID: 1933302696}
+  panel2_Men: {fileID: 9471809}
+  npcIcon: {fileID: 1379734961}
   panel1_Birds: {fileID: 0}
   panel2_Birds: {fileID: 0}
   birdIcon: {fileID: 0}

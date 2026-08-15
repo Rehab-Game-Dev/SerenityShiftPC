@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 /// <summary>
 /// Tracks how many birds have been caught in the current level and keeps the
@@ -14,6 +15,15 @@ public class BirdGameManager : MonoBehaviour
 
     [Header("UI Reference")]
     public TextMeshProUGUI birdCounterText; // Reference to your bird counter text
+
+    [Header("UI To Hide On Completion")]
+    public GameObject instructionPanel;
+    public GameObject counterPanel;
+    public GameObject counterIcon;
+
+    [Header("Timing")]
+    [Tooltip("Delay before hiding the instruction/counter UI, so the completion toast has time to be read first.")]
+    public float completionDelay = 3f;
 
     private void Awake()
     {
@@ -32,8 +42,19 @@ public class BirdGameManager : MonoBehaviour
         if (caughtCount >= totalBirds)
         {
             Debug.Log("All birds caught! You win!");
-            // You can add win condition logic here
+            StartCoroutine(HideCompletionUIAfterDelay());
         }
+    }
+
+    // Waits for the completion toast to be read before hiding the instruction/counter
+    // UI, instead of cutting the toast off immediately.
+    private IEnumerator HideCompletionUIAfterDelay()
+    {
+        yield return new WaitForSeconds(completionDelay);
+
+        if (instructionPanel != null) instructionPanel.SetActive(false);
+        if (counterPanel != null) counterPanel.SetActive(false);
+        if (counterIcon != null) counterIcon.SetActive(false);
     }
 
     private void UpdateCounterUI()

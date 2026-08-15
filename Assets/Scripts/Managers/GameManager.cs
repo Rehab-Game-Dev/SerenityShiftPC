@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 /// <summary>
 /// Tracks NPC catches for the current level. Once every NPC has been caught, swaps the
@@ -31,6 +32,10 @@ public class GameManager : MonoBehaviour
     public BirdSpawner birdSpawner;
     public BirdManager birdManager;
 
+    [Header("Timing")]
+    [Tooltip("Delay before swapping to the bird UI/activating birds, so the completion toast has time to be read first.")]
+    public float completionDelay = 3f;
+
     private void Awake()
     {
         Instance = this;
@@ -52,21 +57,29 @@ public class GameManager : MonoBehaviour
         if (caughtCount >= totalNPCs)
         {
             Debug.Log("All NPCs caught!");
+            StartCoroutine(TransitionToBirdsAfterDelay());
+        }
+    }
 
-            HideMenUIElements();
-            ShowBirdUIElements();
+    // Waits for the completion toast to be read before swapping the UI over and
+    // activating birds, instead of cutting the toast off immediately.
+    private IEnumerator TransitionToBirdsAfterDelay()
+    {
+        yield return new WaitForSeconds(completionDelay);
 
-            // Activate birds from scene
-            if (birdManager != null)
-            {
-                birdManager.ActivateBirds();
-            }
+        HideMenUIElements();
+        ShowBirdUIElements();
 
-            // Start spawning new birds
-            if (birdSpawner != null)
-            {
-                birdSpawner.StartSpawning();
-            }
+        // Activate birds from scene
+        if (birdManager != null)
+        {
+            birdManager.ActivateBirds();
+        }
+
+        // Start spawning new birds
+        if (birdSpawner != null)
+        {
+            birdSpawner.StartSpawning();
         }
     }
 

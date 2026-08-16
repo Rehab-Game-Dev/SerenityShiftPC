@@ -44,24 +44,24 @@ This project's own source code is licensed under the [MIT License](LICENSE). It 
 
 *(present in the local project for development, but not pushed here — see `.gitignore`)*
 
-- Big Oak Tree FREE (ALP Assets)
-- MBJ Plant Pack 01 FREE — MadeByJawns
-- Splash of Color – Unique Photogrammetry Plants
-- Stylized Plants in Pots
-- Town Constructor 3
+- Big Oak Tree FREE (ALP Assets) - https://assetstore.unity.com/packages/3d/vegetation/big-oak-tree-free-279431
+- MBJ Plant Pack 01 FREE — MadeByJawns - https://madebyjawns.itch.io/plantpack1
+- Splash of Color – Unique Photogrammetry Plants - https://assetstore.unity.com/packages/3d/vegetation/plants/splash-of-color-unique-photogrammetry-plants-211137
+- Stylized Plants in Pots - https://sketchfab.com/3d-models/stylized-plants-pots-555a3a3de4674e68a8059714c158f2ef
+- Town Constructor 3 - https://assetstore.unity.com/packages/3d/environments/urban/town-constructor-3-71070 (purchased asset, single entity license — not redistributed; purchased by [oriah755](https://github.com/oriah755))
 - URP Tree Pack
-- WoodenParkBench
-- npc_casual_set_00
-- Free American Sedans (Cars pack) — High Matters
-- Anemone_Hybrida_OBJ
+- WoodenParkBench - https://assetstore.unity.com/packages/3d/props/furniture/wooden-park-bench-game-ready-3d-model-348356
+- npc_casual_set_00 - https://assetstore.unity.com/packages/3d/characters/humanoids/humans/npc-casual-set-00-326131
+- Free American Sedans (Cars pack) — High Matters - https://www.fab.com/listings/b34c4162-44f4-4902-bd6f-489943afa4bd?lang=en
+- Anemone_Hybrida_OBJ - https://sketchfab.com/3d-models/anemone-hybrida-honorine-jobert-d40b58e0af514977aa52b839659dc1d3
 - Emilulz Assets
-- Flowers And Garden Assets
-- H&L Assets
+- Flowers And Garden Assets - https://assetstore.unity.com/packages/3d/vegetation/flowers/flowers-and-garden-assets-241214
+- Urban Fences - https://assetstore.unity.com/packages/3d/environments/urban/urban-fences-327500 (purchased asset, single entity license — not redistributed; purchased by [oriah755](https://github.com/oriah755))
 - LowlyPoly
 - NOT_Lonely
-- Ornamental Flower Set
-- Parks And Nature Pack
-- Rocks and Vegetation Pack
+- Ornamental Flower Set - https://assetstore.unity.com/packages/3d/vegetation/flowers/ornamental-flower-set-11920
+- Parks And Nature Pack - https://assetstore.unity.com/packages/3d/props/parks-and-nature-pack-lite-77362
+- Rocks and Vegetation Pack - https://assetstore.unity.com/packages/3d/environments/rocks-and-vegetation-pack-urp-243519
 - Trees_WorldSpace_FREE
 - Ultrasonic
 - Easter Island statue

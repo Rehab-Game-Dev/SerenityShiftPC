@@ -84,10 +84,5 @@ This project's own source code is licensed under the [MIT License](LICENSE). It 
 - Home, mouse, and volume icons
 - Human Basic Motions 2.4 FREE (NPC animations) — Kevin Iglesias ([keviniglesias.com](https://www.keviniglesias.com/)) — Standard Asset Store EULA: royalty-free, commercial use allowed, attribution not required, resale/redistribution not permitted
 
-#### Audio — included in this repository
-| Sound | Source |
-|---|---|
-| Musical notes (Do/Re/Mi/Fa/Sol/La/Si) | Freesound.org, [Jaz_the_MAN_2](https://freesound.org/people/Jaz_the_MAN_2/), CC0 1.0 |
-
 </details>
 

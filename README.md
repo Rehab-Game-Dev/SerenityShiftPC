@@ -19,9 +19,6 @@ A therapeutic PC simulation for treating anxiety, using controlled daily-life en
 **Wiki Pages:**  
 https://github.com/Rehab-Game-Dev/SerenityShiftVR/wiki
 
-**YouTube Demo (narration in Hebrew):**  
-https://youtu.be/bzBSL8CwUaQ
-
 **Web Demo (itch.io):**  
 https://yarinkash1.itch.io/serenity-shift-pc-final-build-v1
 

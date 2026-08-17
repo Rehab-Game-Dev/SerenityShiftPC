@@ -50,11 +50,15 @@ public class AuthManager : MonoBehaviour
         statusText.text = "Welcome Back!";
     }
 
-    /// <summary>Skips authentication entirely and dismisses the login UI.</summary>
+    /// <summary>
+    /// Skips authentication entirely: dismisses the login UI and hands off to the
+    /// Environment Menu scene, whose own UI (see <c>MenuLoader.Street()</c>) is
+    /// responsible for continuing on to the main menu when the player clicks it.
+    /// </summary>
     public void GuestLogin()
     {
         initUIParent.SetActive(false);
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Environment Menu");
     }
 
     /// <summary>Cancels the input panel and returns to the initial login screen.</summary>

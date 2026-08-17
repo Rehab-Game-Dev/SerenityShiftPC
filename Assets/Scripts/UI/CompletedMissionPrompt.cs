@@ -21,6 +21,7 @@ public class CompletedMissionPrompt : MonoBehaviour
         canvasGroup.alpha = 0f;
     }
 
+    /// <summary>Fades the prompt in, holds it for <see cref="displayDuration"/>, then fades it back out.</summary>
     public void Show()
     {
         gameObject.SetActive(true);

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 
+/// <summary>Tests for the note-matching logic in <see cref="SequenceChecker"/>.</summary>
 public class SequenceCheckerTests
 {
     private static readonly List<string> CorrectSequence = new List<string>

@@ -1,6 +1,9 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using TMPro;
+using Unity.Services.Authentication;
+using Unity.Services.CloudSave;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -24,19 +27,37 @@ public class MenuLoader : MonoBehaviour
 
     public void LoadTutorial()
     {
+        SaveCurrentLevel(1);
         StartCoroutine(LoadSceneAsync("StreetScene - tutorial"));
     }
     public void LoadEasy()
     {
+        SaveCurrentLevel(2);
         StartCoroutine(LoadSceneAsync("StreetScene - easy"));
     }
     public void LoadMedium()
     {
+        SaveCurrentLevel(3);
         StartCoroutine(LoadSceneAsync("StreetScene - medium"));
     }
     public void LoadHard()
     {
+        SaveCurrentLevel(4);
         StartCoroutine(LoadSceneAsync("StreetScene - hard"));
+    }
+
+    /// <summary>
+    /// Persists which level the player just entered (1=tutorial, 2=easy, 3=medium,
+    /// 4=hard - matching AuthManager.LoadLevelData's switch) so a future sign-in resumes
+    /// here instead of always restarting at the tutorial. Skipped for guests, who
+    /// aren't signed in and have no cloud save to write to.
+    /// </summary>
+    private async void SaveCurrentLevel(int level)
+    {
+        if (!AuthenticationService.Instance.IsSignedIn) return;
+
+        var data = new Dictionary<string, object> { { "saved_level", level } };
+        await CloudSaveService.Instance.Data.Player.SaveAsync(data);
     }
 
     /// <summary>

@@ -23,7 +23,7 @@ https://github.com/Rehab-Game-Dev/SerenityShiftVR/wiki
 https://youtu.be/bzBSL8CwUaQ
 
 **Web Demo (itch.io):**  
-https://yarinkash1.itch.io/serenity-shift-pc-final-build
+https://yarinkash1.itch.io/serenity-shift-pc-final-build-v1
 
 ## Licenses & Attribution
 
